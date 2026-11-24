@@ -5,7 +5,7 @@ Next.js 16 · PostgreSQL (Drizzle) · real protocol cores: **Xray-core** (VLESS,
 ## نصب با یک دستور از گیت‌هاب (Debian / Ubuntu)
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/hozuedz-dot/vvsm-vpn/main/install.sh) --domain vvsm.online --email you@example.com
+bash <(curl -fsSL https://raw.githubusercontent.com/hozuedz-dot/vvsm-panel/main/install.sh) --domain vvsm.online --email you@example.com
 ```
 
 به‌روزرسانی: `vvsm update` (آخرین نسخه را از گیت‌هاب می‌گیرد).
