@@ -1,0 +1,2148 @@
+{
+  "log": {
+    "loglevel": "warning",
+    "access": "none"
+  },
+  "api": {
+    "tag": "api",
+    "listen": "127.0.0.1:10085",
+    "services": [
+      "StatsService",
+      "HandlerService"
+    ]
+  },
+  "stats": {},
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true,
+        "handshake": 4,
+        "connIdle": 300
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true,
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "dns": {
+    "servers": [
+      "https+local://1.1.1.1/dns-query",
+      "https+local://8.8.8.8/dns-query",
+      "https+local://dns.quad9.net/dns-query",
+      "localhost"
+    ],
+    "queryStrategy": "UseIP",
+    "disableCache": false
+  },
+  "inbounds": [
+    {
+      "tag": "in-4",
+      "listen": "127.0.0.1",
+      "port": 10003,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "c619da93-2bfe-429a-af76-0a8c28afb454",
+            "email": "mina354_32"
+          },
+          {
+            "id": "126c634a-bee9-4bf7-aa44-0db4358ee8e0",
+            "email": "amir713_59"
+          },
+          {
+            "id": "5c4c6433-96dd-4479-a395-5f9349e33c79",
+            "email": "ben318_67"
+          },
+          {
+            "id": "5c8271d2-c8d9-4f4a-ab5b-d532bce4d4b4",
+            "email": "ivan870_91"
+          },
+          {
+            "id": "d67ca00a-6a46-476e-ab80-7e2e79d87b00",
+            "email": "darya935_123"
+          },
+          {
+            "id": "7e0814aa-40c8-4386-b68e-2a16ca12cf5d",
+            "email": "arman943_11"
+          },
+          {
+            "id": "cc1f39a9-6dca-415a-aeed-b0d8ff23b3e2",
+            "email": "ben284_0"
+          },
+          {
+            "id": "9c5389bc-0f86-4c17-86ba-1208ee4757b6",
+            "email": "pouya311_1"
+          },
+          {
+            "id": "76c2f3e4-e61b-40c4-a1e7-c68c28678d75",
+            "email": "sara860_2"
+          },
+          {
+            "id": "a1701566-cc5e-46ac-b025-b48d75c43479",
+            "email": "sara997_4"
+          },
+          {
+            "id": "6bbfb42c-230b-44b8-b09c-3bc813ffe4cf",
+            "email": "kian793_5"
+          },
+          {
+            "id": "b14ddc3e-4723-4342-ae4a-61bafadbf1ac",
+            "email": "kian292_6"
+          },
+          {
+            "id": "e326531f-f501-42a5-a1fa-509fedd2e9a1",
+            "email": "felix723_7"
+          },
+          {
+            "id": "ee63deec-0509-4ed2-ba2e-38a9c2ea8c07",
+            "email": "leila628_8"
+          },
+          {
+            "id": "a0c666a7-3c5c-48aa-8c39-a26bb83fa0cc",
+            "email": "amir625_9"
+          },
+          {
+            "id": "20aca9bc-33da-48a0-b526-7840ccbea45d",
+            "email": "olga586_10"
+          },
+          {
+            "id": "042f2419-d2e2-4cf2-9c1c-6c33e81017c0",
+            "email": "nika248_12"
+          },
+          {
+            "id": "51a6368b-7b6d-4d6f-9f2e-3049ab75c0ee",
+            "email": "ali925_13"
+          },
+          {
+            "id": "308116b9-661d-4c6f-ad96-007eea3972d2",
+            "email": "ivan966_14"
+          },
+          {
+            "id": "c32372b3-7350-4ec5-91bc-748406fa6891",
+            "email": "ben946_15"
+          },
+          {
+            "id": "f954c915-f48f-4e7b-8b7a-5944566ddf0f",
+            "email": "nora957_16"
+          },
+          {
+            "id": "b22f002d-37d6-46ff-8ad1-7789a66bff1f",
+            "email": "olga197_17"
+          },
+          {
+            "id": "66229859-8899-4840-b41a-532bf11a7720",
+            "email": "timur250_18"
+          },
+          {
+            "id": "de9246d3-3ad8-4b9c-8f74-c7514c0f2cf4",
+            "email": "mia509_19"
+          },
+          {
+            "id": "6ef0cbaa-8289-43d5-b1b6-172adb628edd",
+            "email": "ivan208_20"
+          },
+          {
+            "id": "cd47bebd-9fe0-4a4f-bc4b-54f4665389bb",
+            "email": "nika441_21"
+          },
+          {
+            "id": "9511a5b3-34b3-45d6-b795-246b91b10f3e",
+            "email": "reza254_22"
+          },
+          {
+            "id": "4cac8cf9-8ebb-47a4-8b42-e1c65d638a4f",
+            "email": "reza294_23"
+          },
+          {
+            "id": "027f7944-6ba2-48ad-baf8-ca3ed1a6f096",
+            "email": "sina871_24"
+          },
+          {
+            "id": "895d2588-ee43-454b-a55e-bcb97d57c2ac",
+            "email": "emil765_25"
+          },
+          {
+            "id": "1447e00f-a6c3-4965-9260-3f0ac5dbfb44",
+            "email": "ali538_26"
+          },
+          {
+            "id": "1c53f864-0238-4b29-ab5f-9497292b679d",
+            "email": "nora682_27"
+          },
+          {
+            "id": "a9de2b7b-1e2e-46b8-a463-3d7bf01fddc3",
+            "email": "maryam572_34"
+          },
+          {
+            "id": "2b99aacc-91c6-4e40-b064-ffd233cc487f",
+            "email": "leila478_36"
+          },
+          {
+            "id": "daff0b2c-1318-47bd-aebd-4d4a70ca7389",
+            "email": "dina857_37"
+          },
+          {
+            "id": "b0cf25d6-0e3a-44ce-af62-c0990e5ccdd8",
+            "email": "timur617_38"
+          },
+          {
+            "id": "51ad3954-65b8-469f-b045-ca67fbe5b0df",
+            "email": "arman187_39"
+          },
+          {
+            "id": "9d914c4a-f968-4910-a183-938d06bcc201",
+            "email": "katja865_40"
+          },
+          {
+            "id": "7900d279-95d6-4299-a7f9-0fda7add9cee",
+            "email": "oleg298_42"
+          },
+          {
+            "id": "6af5b57e-a585-49cf-b378-f4b118845cc1",
+            "email": "dina961_43"
+          },
+          {
+            "id": "21044fbc-3d40-4d70-88a1-3f36ab419c58",
+            "email": "pouya174_44"
+          },
+          {
+            "id": "a1689fb8-3815-420c-ac56-faa4bf4ab5e2",
+            "email": "darya789_45"
+          },
+          {
+            "id": "b27fbb1a-9f85-44fe-8724-b71cf457ec45",
+            "email": "katja116_35"
+          },
+          {
+            "id": "96d7ac2a-d6d6-4dc0-b839-18a03607704d",
+            "email": "maryam992_46"
+          },
+          {
+            "id": "206355bb-8811-45b6-8f92-ad7938198811",
+            "email": "timur574_47"
+          },
+          {
+            "id": "94110c49-e363-45d6-91de-39ad05e3a48c",
+            "email": "maryam400_48"
+          },
+          {
+            "id": "5aa507e5-588f-4959-b1e8-d38a3cd94923",
+            "email": "omid269_49"
+          },
+          {
+            "id": "a6b7bfeb-0dc0-4f33-a66e-00c42dcb4c7c",
+            "email": "ivan370_50"
+          },
+          {
+            "id": "7f4bd738-0134-4057-84cd-d9cf8521f7f6",
+            "email": "amir621_51"
+          },
+          {
+            "id": "42e233dc-6551-47a5-ab03-c48a7baaa880",
+            "email": "anna735_52"
+          },
+          {
+            "id": "f9378fa8-af31-4f29-abe7-9e2b3d6065ac",
+            "email": "ben423_53"
+          },
+          {
+            "id": "f5f82557-7c8f-482b-9a56-450f88ae014a",
+            "email": "amir256_55"
+          },
+          {
+            "id": "331e1a92-7940-4e94-926c-cc8399c9554c",
+            "email": "oleg798_56"
+          },
+          {
+            "id": "55dbad45-0221-4619-88ac-efe855b72b1e",
+            "email": "sara772_57"
+          },
+          {
+            "id": "3142571a-6bf7-487b-8afb-1faf7f6c2580",
+            "email": "ben876_58"
+          },
+          {
+            "id": "8c6f19c6-0eca-4770-8748-d7d35f48961b",
+            "email": "arman883_61"
+          },
+          {
+            "id": "0b8a36df-1648-40d0-800d-c4e9b4726b30",
+            "email": "kian771_63"
+          },
+          {
+            "id": "35185570-caa3-4a2b-a05c-23b55e563326",
+            "email": "omid952_64"
+          },
+          {
+            "id": "a92e2f22-d39e-4ae4-ba74-78a5b2d04a13",
+            "email": "olga763_66"
+          },
+          {
+            "id": "623879ff-ca01-44d9-aee9-7eb809199f0d",
+            "email": "amir929_69"
+          },
+          {
+            "id": "65aa25a9-e047-4cd9-91c1-ce265765b2aa",
+            "email": "sina987_70"
+          },
+          {
+            "id": "06fc7a4b-bdc8-4821-8c19-ae205e9fb0fc",
+            "email": "sara587_73"
+          },
+          {
+            "id": "d338467f-a768-471b-921f-17c6a03d08e4",
+            "email": "ivan320_75"
+          },
+          {
+            "id": "e6d18374-038c-47a1-b641-858f17e681e1",
+            "email": "reza387_76"
+          },
+          {
+            "id": "82b7431c-fbf4-4738-931c-8764c223865d",
+            "email": "ali269_77"
+          },
+          {
+            "id": "e3594d44-5b83-4ccc-abdb-3c3b422db2a3",
+            "email": "mia516_78"
+          },
+          {
+            "id": "3a3766dd-4eb0-4d4d-bfb7-d4ece28a5f47",
+            "email": "emil421_79"
+          },
+          {
+            "id": "caef2d34-515e-4d7a-af5e-29b3098bcdd6",
+            "email": "ivan364_80"
+          },
+          {
+            "id": "f6cd3053-59fa-4f2e-b71e-1d67f6007902",
+            "email": "olga502_82"
+          },
+          {
+            "id": "0fa3c9ee-1214-4a68-8951-df50809d3278",
+            "email": "omid682_83"
+          },
+          {
+            "id": "cbda0249-716e-480e-9ec4-d12af389e12c",
+            "email": "jonas240_85"
+          },
+          {
+            "id": "5524cdc1-65ae-4f6b-985b-6a5c9cc4811c",
+            "email": "timur534_86"
+          },
+          {
+            "id": "50421bbb-ed52-4699-bea5-38761b8fc0d6",
+            "email": "leila188_87"
+          },
+          {
+            "id": "2308de66-6b18-4baa-a3b6-9aea10b760e1",
+            "email": "nika909_88"
+          },
+          {
+            "id": "020bc1e7-4ea5-4809-98d0-4802d763dbf7",
+            "email": "reza942_90"
+          },
+          {
+            "id": "ea344268-9aa2-478e-8757-496b32082bbb",
+            "email": "pouya403_92"
+          },
+          {
+            "id": "33e1a9bc-0f37-4468-92fe-025a152e6002",
+            "email": "maryam747_93"
+          },
+          {
+            "id": "59abdc3f-a198-4779-a687-309bf8d1d231",
+            "email": "kian775_94"
+          },
+          {
+            "id": "a205e3ab-8ada-400a-8457-887eb26099d6",
+            "email": "mia826_96"
+          },
+          {
+            "id": "6e9ae4b7-65bd-43c1-81fd-5a972c6829fe",
+            "email": "mia910_97"
+          },
+          {
+            "id": "2a406de4-4f5b-478c-82d7-0407d1f4f443",
+            "email": "leila924_98"
+          },
+          {
+            "id": "f92b66c7-b3d2-45f1-ab9c-8a7ad9e84d65",
+            "email": "ali824_101"
+          },
+          {
+            "id": "fa259ea8-24fa-41ef-9425-b2c60161a94f",
+            "email": "nora765_104"
+          },
+          {
+            "id": "057514cf-dce5-4556-9a4b-823616d64853",
+            "email": "arman754_105"
+          },
+          {
+            "id": "1c7a648c-a5ed-4eb1-98a2-a440ff9ad07d",
+            "email": "arman136_112"
+          },
+          {
+            "id": "8c92bcf7-3fa5-4bde-9ce8-385b0f81d3a5",
+            "email": "dina185_114"
+          },
+          {
+            "id": "4b3e49ee-e4b2-4489-8414-e33a84bd79d8",
+            "email": "nora737_115"
+          },
+          {
+            "id": "4544b5ce-a6f3-4d0d-a1a2-9e936a645759",
+            "email": "hana414_117"
+          },
+          {
+            "id": "b0641440-f40b-4f1b-8480-ec9847920866",
+            "email": "ben922_118"
+          },
+          {
+            "id": "5fed9d4b-9680-44df-a318-7736071cebb0",
+            "email": "omid229_119"
+          },
+          {
+            "id": "fc2a53d6-0733-448f-8b5d-c1d96877ec17",
+            "email": "ben429_120"
+          },
+          {
+            "id": "3254d937-1c3a-4eaf-b41e-33f7d04b6d7e",
+            "email": "sara828_121"
+          },
+          {
+            "id": "081415f5-c153-4ab2-bfac-832652597f65",
+            "email": "pouya406_122"
+          },
+          {
+            "id": "cd1607ca-0417-4dc3-9028-ed0374256baf",
+            "email": "sina134_125"
+          },
+          {
+            "id": "9274d4eb-9dd8-4619-8ab3-e616ae9f669a",
+            "email": "reza626_126"
+          },
+          {
+            "id": "b9ecc4d4-b19b-4be2-840d-5cb1278c26e4",
+            "email": "hana100_127"
+          },
+          {
+            "id": "781381d8-08e9-4288-acf9-1946b97093ac",
+            "email": "sina643_128"
+          },
+          {
+            "id": "8192335c-0b88-481c-84f8-d9633d67637e",
+            "email": "maryam207_129"
+          },
+          {
+            "id": "b59c8a6e-50f9-4fb7-9149-d8e6b04f5195",
+            "email": "ben250_132"
+          },
+          {
+            "id": "ea66c71a-4e65-4bc9-8b3e-b8887da101c3",
+            "email": "reza556_133"
+          },
+          {
+            "id": "3a1c6a60-a665-4d7a-b654-93ba090e79f0",
+            "email": "sara559_136"
+          },
+          {
+            "id": "4efb6a29-b1e5-4349-86e1-afbc5240a411",
+            "email": "emil369_138"
+          },
+          {
+            "id": "6940b8b4-eea6-44cf-a17f-010cad3cc98d",
+            "email": "olga988_139"
+          },
+          {
+            "id": "d3a06847-dada-40e5-b3c2-f41197d8e4ba",
+            "email": "dina565_29"
+          },
+          {
+            "id": "300a98e1-0332-41f8-be0f-66be755820de",
+            "email": "katja974_81"
+          },
+          {
+            "id": "aa02e539-0b64-4efa-a1a0-18ad3ea20131",
+            "email": "emil233_102"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/tthp5zvbko"
+        },
+        "security": "none",
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": true
+      }
+    },
+    {
+      "tag": "in-2",
+      "listen": "127.0.0.1",
+      "port": 10001,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "c619da93-2bfe-429a-af76-0a8c28afb454",
+            "email": "mina354_32"
+          },
+          {
+            "id": "126c634a-bee9-4bf7-aa44-0db4358ee8e0",
+            "email": "amir713_59"
+          },
+          {
+            "id": "5c4c6433-96dd-4479-a395-5f9349e33c79",
+            "email": "ben318_67"
+          },
+          {
+            "id": "5c8271d2-c8d9-4f4a-ab5b-d532bce4d4b4",
+            "email": "ivan870_91"
+          },
+          {
+            "id": "d67ca00a-6a46-476e-ab80-7e2e79d87b00",
+            "email": "darya935_123"
+          },
+          {
+            "id": "7e0814aa-40c8-4386-b68e-2a16ca12cf5d",
+            "email": "arman943_11"
+          },
+          {
+            "id": "cc1f39a9-6dca-415a-aeed-b0d8ff23b3e2",
+            "email": "ben284_0"
+          },
+          {
+            "id": "9c5389bc-0f86-4c17-86ba-1208ee4757b6",
+            "email": "pouya311_1"
+          },
+          {
+            "id": "76c2f3e4-e61b-40c4-a1e7-c68c28678d75",
+            "email": "sara860_2"
+          },
+          {
+            "id": "a1701566-cc5e-46ac-b025-b48d75c43479",
+            "email": "sara997_4"
+          },
+          {
+            "id": "6bbfb42c-230b-44b8-b09c-3bc813ffe4cf",
+            "email": "kian793_5"
+          },
+          {
+            "id": "b14ddc3e-4723-4342-ae4a-61bafadbf1ac",
+            "email": "kian292_6"
+          },
+          {
+            "id": "e326531f-f501-42a5-a1fa-509fedd2e9a1",
+            "email": "felix723_7"
+          },
+          {
+            "id": "ee63deec-0509-4ed2-ba2e-38a9c2ea8c07",
+            "email": "leila628_8"
+          },
+          {
+            "id": "a0c666a7-3c5c-48aa-8c39-a26bb83fa0cc",
+            "email": "amir625_9"
+          },
+          {
+            "id": "20aca9bc-33da-48a0-b526-7840ccbea45d",
+            "email": "olga586_10"
+          },
+          {
+            "id": "042f2419-d2e2-4cf2-9c1c-6c33e81017c0",
+            "email": "nika248_12"
+          },
+          {
+            "id": "51a6368b-7b6d-4d6f-9f2e-3049ab75c0ee",
+            "email": "ali925_13"
+          },
+          {
+            "id": "308116b9-661d-4c6f-ad96-007eea3972d2",
+            "email": "ivan966_14"
+          },
+          {
+            "id": "c32372b3-7350-4ec5-91bc-748406fa6891",
+            "email": "ben946_15"
+          },
+          {
+            "id": "f954c915-f48f-4e7b-8b7a-5944566ddf0f",
+            "email": "nora957_16"
+          },
+          {
+            "id": "b22f002d-37d6-46ff-8ad1-7789a66bff1f",
+            "email": "olga197_17"
+          },
+          {
+            "id": "66229859-8899-4840-b41a-532bf11a7720",
+            "email": "timur250_18"
+          },
+          {
+            "id": "de9246d3-3ad8-4b9c-8f74-c7514c0f2cf4",
+            "email": "mia509_19"
+          },
+          {
+            "id": "6ef0cbaa-8289-43d5-b1b6-172adb628edd",
+            "email": "ivan208_20"
+          },
+          {
+            "id": "cd47bebd-9fe0-4a4f-bc4b-54f4665389bb",
+            "email": "nika441_21"
+          },
+          {
+            "id": "9511a5b3-34b3-45d6-b795-246b91b10f3e",
+            "email": "reza254_22"
+          },
+          {
+            "id": "4cac8cf9-8ebb-47a4-8b42-e1c65d638a4f",
+            "email": "reza294_23"
+          },
+          {
+            "id": "027f7944-6ba2-48ad-baf8-ca3ed1a6f096",
+            "email": "sina871_24"
+          },
+          {
+            "id": "895d2588-ee43-454b-a55e-bcb97d57c2ac",
+            "email": "emil765_25"
+          },
+          {
+            "id": "1447e00f-a6c3-4965-9260-3f0ac5dbfb44",
+            "email": "ali538_26"
+          },
+          {
+            "id": "1c53f864-0238-4b29-ab5f-9497292b679d",
+            "email": "nora682_27"
+          },
+          {
+            "id": "a9de2b7b-1e2e-46b8-a463-3d7bf01fddc3",
+            "email": "maryam572_34"
+          },
+          {
+            "id": "2b99aacc-91c6-4e40-b064-ffd233cc487f",
+            "email": "leila478_36"
+          },
+          {
+            "id": "daff0b2c-1318-47bd-aebd-4d4a70ca7389",
+            "email": "dina857_37"
+          },
+          {
+            "id": "b0cf25d6-0e3a-44ce-af62-c0990e5ccdd8",
+            "email": "timur617_38"
+          },
+          {
+            "id": "51ad3954-65b8-469f-b045-ca67fbe5b0df",
+            "email": "arman187_39"
+          },
+          {
+            "id": "9d914c4a-f968-4910-a183-938d06bcc201",
+            "email": "katja865_40"
+          },
+          {
+            "id": "7900d279-95d6-4299-a7f9-0fda7add9cee",
+            "email": "oleg298_42"
+          },
+          {
+            "id": "6af5b57e-a585-49cf-b378-f4b118845cc1",
+            "email": "dina961_43"
+          },
+          {
+            "id": "21044fbc-3d40-4d70-88a1-3f36ab419c58",
+            "email": "pouya174_44"
+          },
+          {
+            "id": "a1689fb8-3815-420c-ac56-faa4bf4ab5e2",
+            "email": "darya789_45"
+          },
+          {
+            "id": "b27fbb1a-9f85-44fe-8724-b71cf457ec45",
+            "email": "katja116_35"
+          },
+          {
+            "id": "96d7ac2a-d6d6-4dc0-b839-18a03607704d",
+            "email": "maryam992_46"
+          },
+          {
+            "id": "206355bb-8811-45b6-8f92-ad7938198811",
+            "email": "timur574_47"
+          },
+          {
+            "id": "94110c49-e363-45d6-91de-39ad05e3a48c",
+            "email": "maryam400_48"
+          },
+          {
+            "id": "5aa507e5-588f-4959-b1e8-d38a3cd94923",
+            "email": "omid269_49"
+          },
+          {
+            "id": "a6b7bfeb-0dc0-4f33-a66e-00c42dcb4c7c",
+            "email": "ivan370_50"
+          },
+          {
+            "id": "7f4bd738-0134-4057-84cd-d9cf8521f7f6",
+            "email": "amir621_51"
+          },
+          {
+            "id": "42e233dc-6551-47a5-ab03-c48a7baaa880",
+            "email": "anna735_52"
+          },
+          {
+            "id": "f9378fa8-af31-4f29-abe7-9e2b3d6065ac",
+            "email": "ben423_53"
+          },
+          {
+            "id": "f5f82557-7c8f-482b-9a56-450f88ae014a",
+            "email": "amir256_55"
+          },
+          {
+            "id": "331e1a92-7940-4e94-926c-cc8399c9554c",
+            "email": "oleg798_56"
+          },
+          {
+            "id": "55dbad45-0221-4619-88ac-efe855b72b1e",
+            "email": "sara772_57"
+          },
+          {
+            "id": "3142571a-6bf7-487b-8afb-1faf7f6c2580",
+            "email": "ben876_58"
+          },
+          {
+            "id": "8c6f19c6-0eca-4770-8748-d7d35f48961b",
+            "email": "arman883_61"
+          },
+          {
+            "id": "0b8a36df-1648-40d0-800d-c4e9b4726b30",
+            "email": "kian771_63"
+          },
+          {
+            "id": "35185570-caa3-4a2b-a05c-23b55e563326",
+            "email": "omid952_64"
+          },
+          {
+            "id": "a92e2f22-d39e-4ae4-ba74-78a5b2d04a13",
+            "email": "olga763_66"
+          },
+          {
+            "id": "623879ff-ca01-44d9-aee9-7eb809199f0d",
+            "email": "amir929_69"
+          },
+          {
+            "id": "65aa25a9-e047-4cd9-91c1-ce265765b2aa",
+            "email": "sina987_70"
+          },
+          {
+            "id": "06fc7a4b-bdc8-4821-8c19-ae205e9fb0fc",
+            "email": "sara587_73"
+          },
+          {
+            "id": "d338467f-a768-471b-921f-17c6a03d08e4",
+            "email": "ivan320_75"
+          },
+          {
+            "id": "e6d18374-038c-47a1-b641-858f17e681e1",
+            "email": "reza387_76"
+          },
+          {
+            "id": "82b7431c-fbf4-4738-931c-8764c223865d",
+            "email": "ali269_77"
+          },
+          {
+            "id": "e3594d44-5b83-4ccc-abdb-3c3b422db2a3",
+            "email": "mia516_78"
+          },
+          {
+            "id": "3a3766dd-4eb0-4d4d-bfb7-d4ece28a5f47",
+            "email": "emil421_79"
+          },
+          {
+            "id": "caef2d34-515e-4d7a-af5e-29b3098bcdd6",
+            "email": "ivan364_80"
+          },
+          {
+            "id": "f6cd3053-59fa-4f2e-b71e-1d67f6007902",
+            "email": "olga502_82"
+          },
+          {
+            "id": "0fa3c9ee-1214-4a68-8951-df50809d3278",
+            "email": "omid682_83"
+          },
+          {
+            "id": "cbda0249-716e-480e-9ec4-d12af389e12c",
+            "email": "jonas240_85"
+          },
+          {
+            "id": "5524cdc1-65ae-4f6b-985b-6a5c9cc4811c",
+            "email": "timur534_86"
+          },
+          {
+            "id": "50421bbb-ed52-4699-bea5-38761b8fc0d6",
+            "email": "leila188_87"
+          },
+          {
+            "id": "2308de66-6b18-4baa-a3b6-9aea10b760e1",
+            "email": "nika909_88"
+          },
+          {
+            "id": "020bc1e7-4ea5-4809-98d0-4802d763dbf7",
+            "email": "reza942_90"
+          },
+          {
+            "id": "ea344268-9aa2-478e-8757-496b32082bbb",
+            "email": "pouya403_92"
+          },
+          {
+            "id": "33e1a9bc-0f37-4468-92fe-025a152e6002",
+            "email": "maryam747_93"
+          },
+          {
+            "id": "59abdc3f-a198-4779-a687-309bf8d1d231",
+            "email": "kian775_94"
+          },
+          {
+            "id": "a205e3ab-8ada-400a-8457-887eb26099d6",
+            "email": "mia826_96"
+          },
+          {
+            "id": "6e9ae4b7-65bd-43c1-81fd-5a972c6829fe",
+            "email": "mia910_97"
+          },
+          {
+            "id": "2a406de4-4f5b-478c-82d7-0407d1f4f443",
+            "email": "leila924_98"
+          },
+          {
+            "id": "f92b66c7-b3d2-45f1-ab9c-8a7ad9e84d65",
+            "email": "ali824_101"
+          },
+          {
+            "id": "fa259ea8-24fa-41ef-9425-b2c60161a94f",
+            "email": "nora765_104"
+          },
+          {
+            "id": "057514cf-dce5-4556-9a4b-823616d64853",
+            "email": "arman754_105"
+          },
+          {
+            "id": "1c7a648c-a5ed-4eb1-98a2-a440ff9ad07d",
+            "email": "arman136_112"
+          },
+          {
+            "id": "8c92bcf7-3fa5-4bde-9ce8-385b0f81d3a5",
+            "email": "dina185_114"
+          },
+          {
+            "id": "4b3e49ee-e4b2-4489-8414-e33a84bd79d8",
+            "email": "nora737_115"
+          },
+          {
+            "id": "4544b5ce-a6f3-4d0d-a1a2-9e936a645759",
+            "email": "hana414_117"
+          },
+          {
+            "id": "b0641440-f40b-4f1b-8480-ec9847920866",
+            "email": "ben922_118"
+          },
+          {
+            "id": "5fed9d4b-9680-44df-a318-7736071cebb0",
+            "email": "omid229_119"
+          },
+          {
+            "id": "fc2a53d6-0733-448f-8b5d-c1d96877ec17",
+            "email": "ben429_120"
+          },
+          {
+            "id": "3254d937-1c3a-4eaf-b41e-33f7d04b6d7e",
+            "email": "sara828_121"
+          },
+          {
+            "id": "081415f5-c153-4ab2-bfac-832652597f65",
+            "email": "pouya406_122"
+          },
+          {
+            "id": "cd1607ca-0417-4dc3-9028-ed0374256baf",
+            "email": "sina134_125"
+          },
+          {
+            "id": "9274d4eb-9dd8-4619-8ab3-e616ae9f669a",
+            "email": "reza626_126"
+          },
+          {
+            "id": "b9ecc4d4-b19b-4be2-840d-5cb1278c26e4",
+            "email": "hana100_127"
+          },
+          {
+            "id": "781381d8-08e9-4288-acf9-1946b97093ac",
+            "email": "sina643_128"
+          },
+          {
+            "id": "8192335c-0b88-481c-84f8-d9633d67637e",
+            "email": "maryam207_129"
+          },
+          {
+            "id": "b59c8a6e-50f9-4fb7-9149-d8e6b04f5195",
+            "email": "ben250_132"
+          },
+          {
+            "id": "ea66c71a-4e65-4bc9-8b3e-b8887da101c3",
+            "email": "reza556_133"
+          },
+          {
+            "id": "3a1c6a60-a665-4d7a-b654-93ba090e79f0",
+            "email": "sara559_136"
+          },
+          {
+            "id": "4efb6a29-b1e5-4349-86e1-afbc5240a411",
+            "email": "emil369_138"
+          },
+          {
+            "id": "6940b8b4-eea6-44cf-a17f-010cad3cc98d",
+            "email": "olga988_139"
+          },
+          {
+            "id": "d3a06847-dada-40e5-b3c2-f41197d8e4ba",
+            "email": "dina565_29"
+          },
+          {
+            "id": "300a98e1-0332-41f8-be0f-66be755820de",
+            "email": "katja974_81"
+          },
+          {
+            "id": "aa02e539-0b64-4efa-a1a0-18ad3ea20131",
+            "email": "emil233_102"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/8ujfqjk4ys"
+        },
+        "security": "none",
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": true
+      }
+    },
+    {
+      "tag": "in-3",
+      "listen": "127.0.0.1",
+      "port": 10002,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "QW6wRSLzNvDBcoy6",
+            "email": "mina354_32"
+          },
+          {
+            "password": "EqE2CZ9GQNtkm7Lx",
+            "email": "amir713_59"
+          },
+          {
+            "password": "cyCYiRkedbC9G6ZK",
+            "email": "ben318_67"
+          },
+          {
+            "password": "7XFatTHK3NamwcYM",
+            "email": "ivan870_91"
+          },
+          {
+            "password": "Ps8wyfp6UCNFaXJX",
+            "email": "darya935_123"
+          },
+          {
+            "password": "Toxu9d9AJ4fDt6uE",
+            "email": "arman943_11"
+          },
+          {
+            "password": "tRwfHQNHc3RCgyzt",
+            "email": "ben284_0"
+          },
+          {
+            "password": "PMq9VeNyGuRDhb2U",
+            "email": "pouya311_1"
+          },
+          {
+            "password": "QWXEDHNZQSJRPmS5",
+            "email": "sara860_2"
+          },
+          {
+            "password": "VsRPF9jQAEr3VzZF",
+            "email": "sara997_4"
+          },
+          {
+            "password": "3siN7w4TXBVqYTUZ",
+            "email": "kian793_5"
+          },
+          {
+            "password": "rkFNN6LaapCr5iBk",
+            "email": "kian292_6"
+          },
+          {
+            "password": "KuLNMtVZVHcuvUrn",
+            "email": "felix723_7"
+          },
+          {
+            "password": "NiiTH7PEgg5cHens",
+            "email": "leila628_8"
+          },
+          {
+            "password": "WZYBgh69e7H3vUEC",
+            "email": "amir625_9"
+          },
+          {
+            "password": "Z4kNDsmLsadj9vcr",
+            "email": "olga586_10"
+          },
+          {
+            "password": "SHPNUD78D4QbeaQC",
+            "email": "nika248_12"
+          },
+          {
+            "password": "i4dQ7cx8WK58LfuN",
+            "email": "ali925_13"
+          },
+          {
+            "password": "YUEmX59Ksu3b7E9K",
+            "email": "ivan966_14"
+          },
+          {
+            "password": "kiirYQyhWHFkhx3P",
+            "email": "ben946_15"
+          },
+          {
+            "password": "njSVXbjGYpkVRdsz",
+            "email": "nora957_16"
+          },
+          {
+            "password": "P9kYqXbJfjuv2RWH",
+            "email": "olga197_17"
+          },
+          {
+            "password": "V8yXhAoRUqXBNMGb",
+            "email": "timur250_18"
+          },
+          {
+            "password": "R8yvVJtPdBgZexUs",
+            "email": "mia509_19"
+          },
+          {
+            "password": "JdGYP6pUdvJf7jV2",
+            "email": "ivan208_20"
+          },
+          {
+            "password": "hCzfMoykLVKJK6Zk",
+            "email": "nika441_21"
+          },
+          {
+            "password": "rHgEW2rCaMnDVRJJ",
+            "email": "reza254_22"
+          },
+          {
+            "password": "xLRKjiW2RPaWfSfJ",
+            "email": "reza294_23"
+          },
+          {
+            "password": "MuWgDnaGRY7ey3jM",
+            "email": "sina871_24"
+          },
+          {
+            "password": "WXHwKwkTZpeQRHei",
+            "email": "emil765_25"
+          },
+          {
+            "password": "fJfkHjYCMKJ94BTV",
+            "email": "ali538_26"
+          },
+          {
+            "password": "DH5BgDKYPEy9irMB",
+            "email": "nora682_27"
+          },
+          {
+            "password": "VgcVmTaKMHtNbSFE",
+            "email": "maryam572_34"
+          },
+          {
+            "password": "uaYaEUr8kLkb8rn4",
+            "email": "leila478_36"
+          },
+          {
+            "password": "EtAn6LBPviM56vQR",
+            "email": "dina857_37"
+          },
+          {
+            "password": "khwczXBUHjzPrU4H",
+            "email": "timur617_38"
+          },
+          {
+            "password": "WSQqucqAZ8LiCjKi",
+            "email": "arman187_39"
+          },
+          {
+            "password": "KTeTXpF5oQeF9dYJ",
+            "email": "katja865_40"
+          },
+          {
+            "password": "7W5sHcKiMtLEVfd9",
+            "email": "oleg298_42"
+          },
+          {
+            "password": "YigfNUQn9yUj3FkW",
+            "email": "dina961_43"
+          },
+          {
+            "password": "92aZd5H5udXc8fpY",
+            "email": "pouya174_44"
+          },
+          {
+            "password": "2fSCv3dYep9DMtGL",
+            "email": "darya789_45"
+          },
+          {
+            "password": "VXzbBDGHsDZDSmFS",
+            "email": "katja116_35"
+          },
+          {
+            "password": "JoxSTXC59UqqUUSB",
+            "email": "maryam992_46"
+          },
+          {
+            "password": "BBhCjzykowQ4L4QE",
+            "email": "timur574_47"
+          },
+          {
+            "password": "4Lc6XYW8bK2TbuNw",
+            "email": "maryam400_48"
+          },
+          {
+            "password": "oFb5JT6UdKNShMUQ",
+            "email": "omid269_49"
+          },
+          {
+            "password": "CNVris8degGvyLDC",
+            "email": "ivan370_50"
+          },
+          {
+            "password": "uVWqAEVptKLZFZVu",
+            "email": "amir621_51"
+          },
+          {
+            "password": "xKtKHmBEtBatCsra",
+            "email": "anna735_52"
+          },
+          {
+            "password": "ZRHsddZG3hTgD47k",
+            "email": "ben423_53"
+          },
+          {
+            "password": "xQtNZtUwAWwT36DP",
+            "email": "amir256_55"
+          },
+          {
+            "password": "scpSKGsNEdhqtLRD",
+            "email": "oleg798_56"
+          },
+          {
+            "password": "d5Y7nKHxCs5YrVSg",
+            "email": "sara772_57"
+          },
+          {
+            "password": "evyFvp4wh44SPDPg",
+            "email": "ben876_58"
+          },
+          {
+            "password": "rZwVHKfdXYUPNGtW",
+            "email": "arman883_61"
+          },
+          {
+            "password": "KnUtrHPyQWTswARF",
+            "email": "kian771_63"
+          },
+          {
+            "password": "TEYJsbAeZvaC8JQB",
+            "email": "omid952_64"
+          },
+          {
+            "password": "eSy95y8yuv2hZEPR",
+            "email": "olga763_66"
+          },
+          {
+            "password": "NMLhdASLKPVEUExr",
+            "email": "amir929_69"
+          },
+          {
+            "password": "RyJbAsX3ZRD5AvGV",
+            "email": "sina987_70"
+          },
+          {
+            "password": "wLbZGN2QHeEfBbxU",
+            "email": "sara587_73"
+          },
+          {
+            "password": "Ybz8SJVr5xFJVdSr",
+            "email": "ivan320_75"
+          },
+          {
+            "password": "WLzCPngLTn4FeDhZ",
+            "email": "reza387_76"
+          },
+          {
+            "password": "QeoKWVJnPdeTaPtr",
+            "email": "ali269_77"
+          },
+          {
+            "password": "qSGZKEtFrNcjfFWn",
+            "email": "mia516_78"
+          },
+          {
+            "password": "Ux3QGzwtR5czabid",
+            "email": "emil421_79"
+          },
+          {
+            "password": "2sncoxEEdvRZKuFD",
+            "email": "ivan364_80"
+          },
+          {
+            "password": "jDphX4ejS6t7H47R",
+            "email": "olga502_82"
+          },
+          {
+            "password": "oH5KKmHukoiMEtdd",
+            "email": "omid682_83"
+          },
+          {
+            "password": "nzNeG8AeTLX8WpMH",
+            "email": "jonas240_85"
+          },
+          {
+            "password": "LgTvE97kGBeyakeC",
+            "email": "timur534_86"
+          },
+          {
+            "password": "RWfm8Ff5LbagbARP",
+            "email": "leila188_87"
+          },
+          {
+            "password": "JemUPjMioHFmCVau",
+            "email": "nika909_88"
+          },
+          {
+            "password": "3Eg3g5vYP7xdZtMH",
+            "email": "reza942_90"
+          },
+          {
+            "password": "Q3Zt2RZkQnmry2bk",
+            "email": "pouya403_92"
+          },
+          {
+            "password": "CMh9V5u5t7FXTAwj",
+            "email": "maryam747_93"
+          },
+          {
+            "password": "HrCfiLUqWokpEnCy",
+            "email": "kian775_94"
+          },
+          {
+            "password": "pixrTCT33seZQMWC",
+            "email": "mia826_96"
+          },
+          {
+            "password": "yMpcdvZRrQFLQPJi",
+            "email": "mia910_97"
+          },
+          {
+            "password": "FTGQAxWoAcvk7Lsh",
+            "email": "leila924_98"
+          },
+          {
+            "password": "6XDo6oN48GFQTK6E",
+            "email": "ali824_101"
+          },
+          {
+            "password": "4Qb5uXWnp9cXyYcw",
+            "email": "nora765_104"
+          },
+          {
+            "password": "V5ZHThCv8M8Jsr5d",
+            "email": "arman754_105"
+          },
+          {
+            "password": "6mB7bC9PmJ3CsXUw",
+            "email": "arman136_112"
+          },
+          {
+            "password": "PWQRd8HZvUVPVq37",
+            "email": "dina185_114"
+          },
+          {
+            "password": "z98sXqFxSYDgXrvJ",
+            "email": "nora737_115"
+          },
+          {
+            "password": "SqaZgkLgsnhp6neS",
+            "email": "hana414_117"
+          },
+          {
+            "password": "7GdChcqKTVokW67Q",
+            "email": "ben922_118"
+          },
+          {
+            "password": "KGKDp5JARPr5ZFu4",
+            "email": "omid229_119"
+          },
+          {
+            "password": "Kv9DkQCGKHseSmaB",
+            "email": "ben429_120"
+          },
+          {
+            "password": "v8NxtRwusuUMVD8r",
+            "email": "sara828_121"
+          },
+          {
+            "password": "Ej8chZNkWBrMQGn4",
+            "email": "pouya406_122"
+          },
+          {
+            "password": "xqbAwYWNkmWhX7Nz",
+            "email": "sina134_125"
+          },
+          {
+            "password": "py7mQ9wCUqYotoK4",
+            "email": "reza626_126"
+          },
+          {
+            "password": "mCmMJ8vuH3pm9Rub",
+            "email": "hana100_127"
+          },
+          {
+            "password": "uvPZ7JgA9amddSTe",
+            "email": "sina643_128"
+          },
+          {
+            "password": "5k7VxYTguJ29tV4S",
+            "email": "maryam207_129"
+          },
+          {
+            "password": "eUyQ2G6wbhcxYeWs",
+            "email": "ben250_132"
+          },
+          {
+            "password": "CXAE4YFu6c9cToZM",
+            "email": "reza556_133"
+          },
+          {
+            "password": "dW28LJUXrH5axMw3",
+            "email": "sara559_136"
+          },
+          {
+            "password": "8bRAWQ7MUTEzcnMj",
+            "email": "emil369_138"
+          },
+          {
+            "password": "sGXiLTH39vVHYZ8F",
+            "email": "olga988_139"
+          },
+          {
+            "password": "QhmHkxwKpcSvwUmK",
+            "email": "dina565_29"
+          },
+          {
+            "password": "2u3qvLqBoTpdtHYL",
+            "email": "katja974_81"
+          },
+          {
+            "password": "JDKzYdPqaZJBBJiw",
+            "email": "emil233_102"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "kezrcnejfd"
+        },
+        "security": "none",
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": true
+      }
+    },
+    {
+      "tag": "in-1",
+      "listen": "0.0.0.0",
+      "port": 8443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "c619da93-2bfe-429a-af76-0a8c28afb454",
+            "email": "mina354_32",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "126c634a-bee9-4bf7-aa44-0db4358ee8e0",
+            "email": "amir713_59",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "5c4c6433-96dd-4479-a395-5f9349e33c79",
+            "email": "ben318_67",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "5c8271d2-c8d9-4f4a-ab5b-d532bce4d4b4",
+            "email": "ivan870_91",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "d67ca00a-6a46-476e-ab80-7e2e79d87b00",
+            "email": "darya935_123",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "7e0814aa-40c8-4386-b68e-2a16ca12cf5d",
+            "email": "arman943_11",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "cc1f39a9-6dca-415a-aeed-b0d8ff23b3e2",
+            "email": "ben284_0",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "9c5389bc-0f86-4c17-86ba-1208ee4757b6",
+            "email": "pouya311_1",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "76c2f3e4-e61b-40c4-a1e7-c68c28678d75",
+            "email": "sara860_2",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a1701566-cc5e-46ac-b025-b48d75c43479",
+            "email": "sara997_4",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "6bbfb42c-230b-44b8-b09c-3bc813ffe4cf",
+            "email": "kian793_5",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b14ddc3e-4723-4342-ae4a-61bafadbf1ac",
+            "email": "kian292_6",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "e326531f-f501-42a5-a1fa-509fedd2e9a1",
+            "email": "felix723_7",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "ee63deec-0509-4ed2-ba2e-38a9c2ea8c07",
+            "email": "leila628_8",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a0c666a7-3c5c-48aa-8c39-a26bb83fa0cc",
+            "email": "amir625_9",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "20aca9bc-33da-48a0-b526-7840ccbea45d",
+            "email": "olga586_10",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "042f2419-d2e2-4cf2-9c1c-6c33e81017c0",
+            "email": "nika248_12",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "51a6368b-7b6d-4d6f-9f2e-3049ab75c0ee",
+            "email": "ali925_13",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "308116b9-661d-4c6f-ad96-007eea3972d2",
+            "email": "ivan966_14",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "c32372b3-7350-4ec5-91bc-748406fa6891",
+            "email": "ben946_15",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "f954c915-f48f-4e7b-8b7a-5944566ddf0f",
+            "email": "nora957_16",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b22f002d-37d6-46ff-8ad1-7789a66bff1f",
+            "email": "olga197_17",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "66229859-8899-4840-b41a-532bf11a7720",
+            "email": "timur250_18",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "de9246d3-3ad8-4b9c-8f74-c7514c0f2cf4",
+            "email": "mia509_19",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "6ef0cbaa-8289-43d5-b1b6-172adb628edd",
+            "email": "ivan208_20",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "cd47bebd-9fe0-4a4f-bc4b-54f4665389bb",
+            "email": "nika441_21",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "9511a5b3-34b3-45d6-b795-246b91b10f3e",
+            "email": "reza254_22",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "4cac8cf9-8ebb-47a4-8b42-e1c65d638a4f",
+            "email": "reza294_23",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "027f7944-6ba2-48ad-baf8-ca3ed1a6f096",
+            "email": "sina871_24",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "895d2588-ee43-454b-a55e-bcb97d57c2ac",
+            "email": "emil765_25",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "1447e00f-a6c3-4965-9260-3f0ac5dbfb44",
+            "email": "ali538_26",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "1c53f864-0238-4b29-ab5f-9497292b679d",
+            "email": "nora682_27",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a9de2b7b-1e2e-46b8-a463-3d7bf01fddc3",
+            "email": "maryam572_34",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "2b99aacc-91c6-4e40-b064-ffd233cc487f",
+            "email": "leila478_36",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "daff0b2c-1318-47bd-aebd-4d4a70ca7389",
+            "email": "dina857_37",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b0cf25d6-0e3a-44ce-af62-c0990e5ccdd8",
+            "email": "timur617_38",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "51ad3954-65b8-469f-b045-ca67fbe5b0df",
+            "email": "arman187_39",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "9d914c4a-f968-4910-a183-938d06bcc201",
+            "email": "katja865_40",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "7900d279-95d6-4299-a7f9-0fda7add9cee",
+            "email": "oleg298_42",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "6af5b57e-a585-49cf-b378-f4b118845cc1",
+            "email": "dina961_43",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "21044fbc-3d40-4d70-88a1-3f36ab419c58",
+            "email": "pouya174_44",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a1689fb8-3815-420c-ac56-faa4bf4ab5e2",
+            "email": "darya789_45",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b27fbb1a-9f85-44fe-8724-b71cf457ec45",
+            "email": "katja116_35",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "96d7ac2a-d6d6-4dc0-b839-18a03607704d",
+            "email": "maryam992_46",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "206355bb-8811-45b6-8f92-ad7938198811",
+            "email": "timur574_47",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "94110c49-e363-45d6-91de-39ad05e3a48c",
+            "email": "maryam400_48",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "5aa507e5-588f-4959-b1e8-d38a3cd94923",
+            "email": "omid269_49",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a6b7bfeb-0dc0-4f33-a66e-00c42dcb4c7c",
+            "email": "ivan370_50",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "7f4bd738-0134-4057-84cd-d9cf8521f7f6",
+            "email": "amir621_51",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "42e233dc-6551-47a5-ab03-c48a7baaa880",
+            "email": "anna735_52",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "f9378fa8-af31-4f29-abe7-9e2b3d6065ac",
+            "email": "ben423_53",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "f5f82557-7c8f-482b-9a56-450f88ae014a",
+            "email": "amir256_55",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "331e1a92-7940-4e94-926c-cc8399c9554c",
+            "email": "oleg798_56",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "55dbad45-0221-4619-88ac-efe855b72b1e",
+            "email": "sara772_57",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "3142571a-6bf7-487b-8afb-1faf7f6c2580",
+            "email": "ben876_58",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "8c6f19c6-0eca-4770-8748-d7d35f48961b",
+            "email": "arman883_61",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "0b8a36df-1648-40d0-800d-c4e9b4726b30",
+            "email": "kian771_63",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "35185570-caa3-4a2b-a05c-23b55e563326",
+            "email": "omid952_64",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a92e2f22-d39e-4ae4-ba74-78a5b2d04a13",
+            "email": "olga763_66",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "623879ff-ca01-44d9-aee9-7eb809199f0d",
+            "email": "amir929_69",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "65aa25a9-e047-4cd9-91c1-ce265765b2aa",
+            "email": "sina987_70",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "06fc7a4b-bdc8-4821-8c19-ae205e9fb0fc",
+            "email": "sara587_73",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "d338467f-a768-471b-921f-17c6a03d08e4",
+            "email": "ivan320_75",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "e6d18374-038c-47a1-b641-858f17e681e1",
+            "email": "reza387_76",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "82b7431c-fbf4-4738-931c-8764c223865d",
+            "email": "ali269_77",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "e3594d44-5b83-4ccc-abdb-3c3b422db2a3",
+            "email": "mia516_78",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "3a3766dd-4eb0-4d4d-bfb7-d4ece28a5f47",
+            "email": "emil421_79",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "caef2d34-515e-4d7a-af5e-29b3098bcdd6",
+            "email": "ivan364_80",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "f6cd3053-59fa-4f2e-b71e-1d67f6007902",
+            "email": "olga502_82",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "0fa3c9ee-1214-4a68-8951-df50809d3278",
+            "email": "omid682_83",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "cbda0249-716e-480e-9ec4-d12af389e12c",
+            "email": "jonas240_85",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "5524cdc1-65ae-4f6b-985b-6a5c9cc4811c",
+            "email": "timur534_86",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "50421bbb-ed52-4699-bea5-38761b8fc0d6",
+            "email": "leila188_87",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "2308de66-6b18-4baa-a3b6-9aea10b760e1",
+            "email": "nika909_88",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "020bc1e7-4ea5-4809-98d0-4802d763dbf7",
+            "email": "reza942_90",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "ea344268-9aa2-478e-8757-496b32082bbb",
+            "email": "pouya403_92",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "33e1a9bc-0f37-4468-92fe-025a152e6002",
+            "email": "maryam747_93",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "59abdc3f-a198-4779-a687-309bf8d1d231",
+            "email": "kian775_94",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "a205e3ab-8ada-400a-8457-887eb26099d6",
+            "email": "mia826_96",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "6e9ae4b7-65bd-43c1-81fd-5a972c6829fe",
+            "email": "mia910_97",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "2a406de4-4f5b-478c-82d7-0407d1f4f443",
+            "email": "leila924_98",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "f92b66c7-b3d2-45f1-ab9c-8a7ad9e84d65",
+            "email": "ali824_101",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "fa259ea8-24fa-41ef-9425-b2c60161a94f",
+            "email": "nora765_104",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "057514cf-dce5-4556-9a4b-823616d64853",
+            "email": "arman754_105",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "1c7a648c-a5ed-4eb1-98a2-a440ff9ad07d",
+            "email": "arman136_112",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "8c92bcf7-3fa5-4bde-9ce8-385b0f81d3a5",
+            "email": "dina185_114",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "4b3e49ee-e4b2-4489-8414-e33a84bd79d8",
+            "email": "nora737_115",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "4544b5ce-a6f3-4d0d-a1a2-9e936a645759",
+            "email": "hana414_117",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b0641440-f40b-4f1b-8480-ec9847920866",
+            "email": "ben922_118",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "5fed9d4b-9680-44df-a318-7736071cebb0",
+            "email": "omid229_119",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "fc2a53d6-0733-448f-8b5d-c1d96877ec17",
+            "email": "ben429_120",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "3254d937-1c3a-4eaf-b41e-33f7d04b6d7e",
+            "email": "sara828_121",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "081415f5-c153-4ab2-bfac-832652597f65",
+            "email": "pouya406_122",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "cd1607ca-0417-4dc3-9028-ed0374256baf",
+            "email": "sina134_125",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "9274d4eb-9dd8-4619-8ab3-e616ae9f669a",
+            "email": "reza626_126",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b9ecc4d4-b19b-4be2-840d-5cb1278c26e4",
+            "email": "hana100_127",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "781381d8-08e9-4288-acf9-1946b97093ac",
+            "email": "sina643_128",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "8192335c-0b88-481c-84f8-d9633d67637e",
+            "email": "maryam207_129",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "b59c8a6e-50f9-4fb7-9149-d8e6b04f5195",
+            "email": "ben250_132",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "ea66c71a-4e65-4bc9-8b3e-b8887da101c3",
+            "email": "reza556_133",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "3a1c6a60-a665-4d7a-b654-93ba090e79f0",
+            "email": "sara559_136",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "4efb6a29-b1e5-4349-86e1-afbc5240a411",
+            "email": "emil369_138",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "6940b8b4-eea6-44cf-a17f-010cad3cc98d",
+            "email": "olga988_139",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "d3a06847-dada-40e5-b3c2-f41197d8e4ba",
+            "email": "dina565_29",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "300a98e1-0332-41f8-be0f-66be755820de",
+            "email": "katja974_81",
+            "flow": "xtls-rprx-vision"
+          },
+          {
+            "id": "aa02e539-0b64-4efa-a1a0-18ad3ea20131",
+            "email": "emil233_102",
+            "flow": "xtls-rprx-vision"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "www.microsoft.com:443",
+          "xver": 0,
+          "serverNames": [
+            "www.microsoft.com"
+          ],
+          "privateKey": "oGMNpcCPpXuzNTmnEimaTT49il3-Ixh9vZnlJMnV4Xk",
+          "shortIds": [
+            "92663d16",
+            ""
+          ]
+        },
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "routeOnly": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {},
+      "streamSettings": {
+        "sockopt": {
+          "domainStrategy": "UseIP"
+        }
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
+    },
+    {
+      "tag": "tunnel-19",
+      "protocol": "vless",
+      "settings": {
+        "address": "ir6.vvsm.online",
+        "port": 4443,
+        "id": "a9d0c59b-c456-4eb3-b269-94153989460e",
+        "encryption": "none",
+        "flow": "xtls-rprx-vision",
+        "reverse": {
+          "tag": "bridge-19"
+        }
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "ir6.vvsm.online",
+          "fingerprint": "chrome"
+        }
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "bridge-19"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "port": "25,465,587",
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:malware"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:malware"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:phishing"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:phishing"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:cryptominers"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-public-tracker",
+          "keyword:tracker",
+          "keyword:announce"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:telegram"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "keyword:tracker",
+          "keyword:announce"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:ir"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "port": "3074,27015-27030",
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:sanctioned"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:ir",
+          "regexp:\\.ir$"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:ir"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "direct"
+      }
+    ]
+  }
+}

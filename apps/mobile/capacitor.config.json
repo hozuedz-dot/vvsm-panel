@@ -1,0 +1,12 @@
+{
+  "appId": "online.vvsm.app",
+  "appName": "VVSM",
+  "webDir": "www",
+  "server": {
+    "url": "https://vvsm.online/portal",
+    "cleartext": false,
+    "allowNavigation": ["vvsm.online", "*.vvsm.online"]
+  },
+  "android": { "allowMixedContent": false },
+  "ios": { "contentInset": "always" }
+}

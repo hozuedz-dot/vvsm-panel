@@ -1,0 +1,337 @@
+{
+  "log": {
+    "loglevel": "warning",
+    "access": "none"
+  },
+  "api": {
+    "tag": "api",
+    "listen": "127.0.0.1:10085",
+    "services": [
+      "StatsService",
+      "HandlerService"
+    ]
+  },
+  "stats": {},
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true,
+        "handshake": 4,
+        "connIdle": 300
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true,
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "dns": {
+    "servers": [
+      "https+local://1.1.1.1/dns-query",
+      "https+local://8.8.8.8/dns-query",
+      "https+local://dns.quad9.net/dns-query",
+      "localhost"
+    ],
+    "queryStrategy": "UseIP",
+    "disableCache": false
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in-2",
+      "listen": "0.0.0.0",
+      "port": 4444,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "01692517-adac-41fb-a53e-5ae07c9f964b",
+            "email": "tunnel-2",
+            "flow": "xtls-rprx-vision",
+            "reverse": {
+              "tag": "portal-2"
+            }
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "www.microsoft.com:443",
+          "xver": 0,
+          "serverNames": [
+            "www.microsoft.com"
+          ],
+          "privateKey": "INitEYFKLymWKe5upciYSGFkeGOnGPCNGToZy69FdHA",
+          "shortIds": [
+            "2a046bd7",
+            ""
+          ]
+        },
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": true
+      }
+    },
+    {
+      "tag": "tun-in-19",
+      "listen": "0.0.0.0",
+      "port": 4443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "a9d0c59b-c456-4eb3-b269-94153989460e",
+            "email": "tunnel-19",
+            "flow": "xtls-rprx-vision",
+            "reverse": {
+              "tag": "portal-19"
+            }
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "tls",
+        "tlsSettings": {
+          "minVersion": "1.2",
+          "maxVersion": "1.3",
+          "alpn": [
+            "h2",
+            "http/1.1"
+          ],
+          "certificates": [
+            {
+              "certificateFile": "/tmp/xr/c.pem",
+              "keyFile": "/tmp/xr/k.pem"
+            }
+          ]
+        },
+        "sockopt": {
+          "tcpFastOpen": true
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "routeOnly": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {},
+      "streamSettings": {
+        "sockopt": {
+          "domainStrategy": "UseIP"
+        }
+      }
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
+    },
+    {
+      "tag": "tunnel-1",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "de1.vvsm.online",
+            "port": 4443,
+            "users": [
+              {
+                "id": "2295ae40-c6d7-40d0-a19f-b3b7dffc4ada",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/tun-a1"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "de1.vvsm.online",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "tunnel-16",
+      "protocol": "freedom",
+      "sendThrough": "10.250.0.16",
+      "settings": {}
+    },
+    {
+      "tag": "tunnel-17",
+      "protocol": "freedom",
+      "sendThrough": "10.251.0.17",
+      "settings": {}
+    },
+    {
+      "tag": "tunnel-18",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 20018
+          }
+        ]
+      }
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "port": "25,465,587",
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:malware"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:malware"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:phishing"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:phishing"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:cryptominers"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-public-tracker",
+          "keyword:tracker",
+          "keyword:announce"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:telegram"
+        ],
+        "outboundTag": "tunnel-1"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "keyword:tracker",
+          "keyword:announce"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:ir"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "port": "3074,27015-27030",
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:sanctioned"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:ir",
+          "regexp:\\.ir$"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:ir"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "outboundTag": "direct"
+      }
+    ]
+  }
+}

@@ -1,0 +1,335 @@
+import {
+  pgTable,
+  serial,
+  text,
+  integer,
+  bigint,
+  boolean,
+  timestamp,
+  jsonb,
+  real,
+  index,
+} from "drizzle-orm/pg-core";
+
+const big = (n: string) => bigint(n, { mode: "number" });
+const created = () => timestamp("created_at", { mode: "date" }).defaultNow().notNull();
+
+export const admins = pgTable("admins", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  passwordHash: text("password_hash").notNull(),
+  totpSecret: text("totp_secret"),
+  totpEnabled: boolean("totp_enabled").notNull().default(false),
+  mustChange: boolean("must_change").notNull().default(false),
+  failedAttempts: integer("failed_attempts").notNull().default(0),
+  lockedUntil: timestamp("locked_until", { mode: "date" }),
+  lastLoginAt: timestamp("last_login_at", { mode: "date" }),
+  createdAt: created(),
+});
+
+export const settings = pgTable("settings", {
+  key: text("key").primaryKey(),
+  value: jsonb("value").notNull().default({}),
+  updatedAt: timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
+});
+
+export const plans = pgTable("plans", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description").notNull().default(""),
+  priceUsd: real("price_usd").notNull().default(5),
+  durationDays: integer("duration_days").notNull().default(30),
+  dataLimitGb: integer("data_limit_gb").notNull().default(0),
+  speedLimitMbps: integer("speed_limit_mbps").notNull().default(0),
+  deviceLimit: integer("device_limit").notNull().default(0),
+  protocols: jsonb("protocols").$type<string[]>().notNull().default([]),
+  active: boolean("active").notNull().default(true),
+  featured: boolean("featured").notNull().default(false),
+  sortOrder: integer("sort_order").notNull().default(0),
+  createdAt: created(),
+});
+
+export const users = pgTable(
+  "users",
+  {
+    id: serial("id").primaryKey(),
+    username: text("username").notNull().unique(),
+    email: text("email").notNull().default(""),
+    passwordHash: text("password_hash").notNull().default(""),
+    subToken: text("sub_token").notNull().unique(),
+    uuid: text("uuid").notNull(),
+    vpnPassword: text("vpn_password").notNull(),
+    wgPrivateKey: text("wg_private_key").notNull().default(""),
+    wgPublicKey: text("wg_public_key").notNull().default(""),
+    wgIp: text("wg_ip").notNull().default(""),
+    status: text("status").notNull().default("active"),
+    planId: integer("plan_id"),
+    expiresAt: timestamp("expires_at", { mode: "date" }),
+    dataLimitBytes: big("data_limit_bytes").notNull().default(0),
+    usedBytes: big("used_bytes").notNull().default(0),
+    monthlyLimitBytes: big("monthly_limit_bytes").notNull().default(0),
+    monthUsedBytes: big("month_used_bytes").notNull().default(0),
+    speedLimitMbps: integer("speed_limit_mbps").notNull().default(0),
+    deviceLimit: integer("device_limit").notNull().default(0),
+    telegramId: text("telegram_id").notNull().default(""),
+    note: text("note").notNull().default(""),
+    source: text("source").notNull().default("admin"),
+    notifiedExpiry: boolean("notified_expiry").notNull().default(false),
+    demo: boolean("demo").notNull().default(false),
+    lastOnlineAt: timestamp("last_online_at", { mode: "date" }),
+    createdAt: created(),
+  },
+  (t) => [index("users_status_idx").on(t.status), index("users_created_idx").on(t.createdAt)]
+);
+
+export const subscriptions = pgTable("subscriptions", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").notNull(),
+  planId: integer("plan_id"),
+  orderId: text("order_id"),
+  startsAt: timestamp("starts_at", { mode: "date" }).notNull().defaultNow(),
+  endsAt: timestamp("ends_at", { mode: "date" }).notNull(),
+  status: text("status").notNull().default("active"),
+  priceUsd: real("price_usd").notNull().default(0),
+  dataLimitBytes: big("data_limit_bytes").notNull().default(0),
+  createdAt: created(),
+});
+
+export const orders = pgTable(
+  "orders",
+  {
+    id: text("id").primaryKey(),
+    userId: integer("user_id"),
+    kind: text("kind").notNull().default("new"),
+    planId: integer("plan_id"),
+    email: text("email").notNull().default(""),
+    username: text("username").notNull().default(""),
+    amountUsd: real("amount_usd").notNull().default(0),
+    payCurrency: text("pay_currency").notNull().default("usdttrc20"),
+    network: text("network").notNull().default(""),
+    payAmount: text("pay_amount").notNull().default("0"),
+    payAddress: text("pay_address").notNull().default(""),
+    provider: text("provider").notNull().default("manual"),
+    providerRef: text("provider_ref").notNull().default(""),
+    txHash: text("tx_hash").notNull().default(""),
+    status: text("status").notNull().default("pending"),
+    expiresAt: timestamp("expires_at", { mode: "date" }),
+    paidAt: timestamp("paid_at", { mode: "date" }),
+    fulfilledAt: timestamp("fulfilled_at", { mode: "date" }),
+    meta: jsonb("meta").$type<Record<string, unknown>>().notNull().default({}),
+    demo: boolean("demo").notNull().default(false),
+    createdAt: created(),
+  },
+  (t) => [index("orders_status_idx").on(t.status), index("orders_created_idx").on(t.createdAt)]
+);
+
+export const nodes = pgTable("nodes", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  countryCode: text("country_code").notNull().default("DE"),
+  country: text("country").notNull().default(""),
+  city: text("city").notNull().default(""),
+  ip: text("ip").notNull().default(""),
+  domain: text("domain").notNull().default(""),
+  role: text("role").notNull().default("exit"),
+  isLocal: boolean("is_local").notNull().default(false),
+  agentToken: text("agent_token").notNull().default(""),
+  agentConfigHash: text("agent_config_hash").notNull().default(""),
+  xrayActive: boolean("xray_active").notNull().default(false),
+  agentError: text("agent_error").notNull().default(""),
+  agentVersion: text("agent_version").notNull().default(""),
+  certSha256: text("cert_sha256").notNull().default(""),
+  status: text("status").notNull().default("pending"),
+  cpu: real("cpu").notNull().default(0),
+  ram: real("ram").notNull().default(0),
+  load: real("load").notNull().default(0),
+  rxBps: big("rx_bps").notNull().default(0),
+  txBps: big("tx_bps").notNull().default(0),
+  capacityMbps: integer("capacity_mbps").notNull().default(1000),
+  usersCount: integer("users_count").notNull().default(0),
+  lat: real("lat").notNull().default(0),
+  lng: real("lng").notNull().default(0),
+  tags: text("tags").notNull().default(""),
+  enabled: boolean("enabled").notNull().default(true),
+  demo: boolean("demo").notNull().default(false),
+  lastSeenAt: timestamp("last_seen_at", { mode: "date" }),
+  createdAt: created(),
+});
+
+export const tunnels = pgTable("tunnels", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  mode: text("mode").notNull().default("direct"),
+  carrier: text("carrier").notNull().default("vless"),
+  transport: text("transport").notNull().default("tcp"),
+  security: text("security").notNull().default("none"),
+  entryNodeId: integer("entry_node_id"),
+  exitNodeId: integer("exit_node_id"),
+  listenPort: integer("listen_port").notNull().default(4443),
+  sni: text("sni").notNull().default(""),
+  host: text("host").notNull().default(""),
+  path: text("path").notNull().default("/"),
+  serviceName: text("service_name").notNull().default(""),
+  fingerprint: text("fingerprint").notNull().default("chrome"),
+  secret: text("secret").notNull().default(""),
+  privateKey: text("private_key").notNull().default(""),
+  publicKey: text("public_key").notNull().default(""),
+  shortId: text("short_id").notNull().default(""),
+  realityDest: text("reality_dest").notNull().default("www.microsoft.com:443"),
+  certPath: text("cert_path").notNull().default(""),
+  keyPath: text("key_path").notNull().default(""),
+  mux: boolean("mux").notNull().default(false),
+  keepAliveSec: integer("keep_alive_sec").notNull().default(30),
+  status: text("status").notNull().default("pending"),
+  statusDetail: text("status_detail").notNull().default(""),
+  entryOk: boolean("entry_ok").notNull().default(false),
+  exitOk: boolean("exit_ok").notNull().default(false),
+  enabled: boolean("enabled").notNull().default(true),
+  entrySeenAt: timestamp("entry_seen_at", { mode: "date" }),
+  exitSeenAt: timestamp("exit_seen_at", { mode: "date" }),
+  trafficBytes: big("traffic_bytes").notNull().default(0),
+  latencyMs: integer("latency_ms").notNull().default(0),
+  createdAt: created(),
+});
+
+export const inbounds = pgTable("inbounds", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  protocol: text("protocol").notNull().default("vless"),
+  transport: text("transport").notNull().default("tcp"),
+  security: text("security").notNull().default("tls"),
+  port: integer("port").notNull().default(443),
+  listen: text("listen").notNull().default("0.0.0.0"),
+  nodeId: integer("node_id"),
+  tunnelId: integer("tunnel_id"),
+  sni: text("sni").notNull().default(""),
+  host: text("host").notNull().default(""),
+  path: text("path").notNull().default("/"),
+  serviceName: text("service_name").notNull().default(""),
+  fingerprint: text("fingerprint").notNull().default("chrome"),
+  alpn: text("alpn").notNull().default("h2,http/1.1"),
+  flow: text("flow").notNull().default(""),
+  privateKey: text("private_key").notNull().default(""),
+  publicKey: text("public_key").notNull().default(""),
+  shortId: text("short_id").notNull().default(""),
+  realityDest: text("reality_dest").notNull().default("www.microsoft.com:443"),
+  certPath: text("cert_path").notNull().default(""),
+  keyPath: text("key_path").notNull().default(""),
+  ech: boolean("ech").notNull().default(false),
+  zeroRtt: boolean("zero_rtt").notNull().default(true),
+  sniSpoof: text("sni_spoof").notNull().default(""),
+  fragment: boolean("fragment").notNull().default(false),
+  mux: boolean("mux").notNull().default(false),
+  obfs: text("obfs").notNull().default(""),
+  upMbps: integer("up_mbps").notNull().default(0),
+  downMbps: integer("down_mbps").notNull().default(0),
+  advancedOptions: jsonb("advanced_options").$type<Record<string, unknown>>().notNull().default({}),
+  useCleanIp: boolean("use_clean_ip").notNull().default(false),
+  hidden: boolean("hidden").notNull().default(false),
+  enabled: boolean("enabled").notNull().default(true),
+  remark: text("remark").notNull().default(""),
+  createdAt: created(),
+});
+
+export const routingRules = pgTable("routing_rules", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  ruleType: text("rule_type").notNull().default("domain"),
+  match: text("match").notNull().default(""),
+  outbound: text("outbound").notNull().default("direct"),
+  priority: integer("priority").notNull().default(100),
+  enabled: boolean("enabled").notNull().default(true),
+  demo: boolean("demo").notNull().default(false),
+  createdAt: created(),
+});
+
+export const trafficStats = pgTable(
+  "traffic_stats",
+  {
+    id: serial("id").primaryKey(),
+    ts: timestamp("ts", { mode: "date" }).notNull(),
+    protocol: text("protocol").notNull(),
+    upBytes: big("up_bytes").notNull().default(0),
+    downBytes: big("down_bytes").notNull().default(0),
+    connections: integer("connections").notNull().default(0),
+    demo: boolean("demo").notNull().default(false),
+  },
+  (t) => [index("traffic_ts_idx").on(t.ts)]
+);
+
+export const vpnSessions = pgTable("vpn_sessions", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id"),
+  username: text("username").notNull(),
+  nodeId: integer("node_id"),
+  protocol: text("protocol").notNull(),
+  clientIp: text("client_ip").notNull().default(""),
+  country: text("country").notNull().default(""),
+  device: text("device").notNull().default(""),
+  upBytes: big("up_bytes").notNull().default(0),
+  downBytes: big("down_bytes").notNull().default(0),
+  demo: boolean("demo").notNull().default(false),
+  startedAt: timestamp("started_at", { mode: "date" }).defaultNow().notNull(),
+});
+
+export const serverMetrics = pgTable(
+  "server_metrics",
+  {
+    id: serial("id").primaryKey(),
+    ts: timestamp("ts", { mode: "date" }).defaultNow().notNull(),
+    cpu: real("cpu").notNull().default(0),
+    mem: real("mem").notNull().default(0),
+    disk: real("disk").notNull().default(0),
+    rxBps: big("rx_bps").notNull().default(0),
+    txBps: big("tx_bps").notNull().default(0),
+    load1: real("load1").notNull().default(0),
+  },
+  (t) => [index("metrics_ts_idx").on(t.ts)]
+);
+
+export const cleanIps = pgTable("clean_ips", {
+  id: serial("id").primaryKey(),
+  ip: text("ip").notNull(),
+  port: integer("port").notNull().default(443),
+  latencyMs: integer("latency_ms").notNull().default(0),
+  lossPct: real("loss_pct").notNull().default(0),
+  provider: text("provider").notNull().default("cloudflare"),
+  status: text("status").notNull().default("clean"),
+  assigned: text("assigned").notNull().default(""),
+  note: text("note").notNull().default(""),
+  demo: boolean("demo").notNull().default(false),
+  checkedAt: timestamp("checked_at", { mode: "date" }).defaultNow().notNull(),
+  createdAt: created(),
+});
+
+export const posts = pgTable("posts", {
+  id: serial("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  excerpt: text("excerpt").notNull().default(""),
+  body: text("body").notNull().default(""),
+  lang: text("lang").notNull().default("en"),
+  published: boolean("published").notNull().default(true),
+  createdAt: created(),
+  updatedAt: timestamp("updated_at", { mode: "date" }).defaultNow().notNull(),
+});
+
+export const logs = pgTable(
+  "logs",
+  {
+    id: serial("id").primaryKey(),
+    ts: timestamp("ts", { mode: "date" }).defaultNow().notNull(),
+    level: text("level").notNull().default("info"),
+    category: text("category").notNull().default("system"),
+    message: text("message").notNull(),
+  },
+  (t) => [index("logs_ts_idx").on(t.ts)]
+);
+
+export const backups = pgTable("backups", {
+  id: serial("id").primaryKey(),
+  filename: text("filename").notNull(),
+  sizeBytes: big("size_bytes").notNull().default(0),
+  kind: text("kind").notNull().default("manual"),
+  createdAt: created(),
+});
